@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/Brussels-Permis/',
+  basePath: '/brussels-permis/',
   entryPoints: {
     '': () => import('./main.server.mjs')
   },
