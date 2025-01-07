@@ -1,0 +1,80 @@
+<div class="container-cards">
+  <!-- p1 -->
+  <div class="container-title">
+    <div class="title">Tarifs</div>
+  </div>
+
+  <div class="cards">
+    <div class="container-card" *ngFor="let item of CARTES; let i = index">
+      <div class="title">{{ item["titre"] }}</div>
+      <div class="inforamtion">
+        <!-- sec1 -->
+        <div class="sec">
+          <div class="label">
+            <div class="container-image">
+              <img src="../../assets/imgs/time-and-date(1).png" alt="" />
+            </div>
+            <div>Durée</div>
+          </div>
+          <div class="value">{{ item["duree"] }}</div>
+        </div>
+        <!-- sec2 -->
+        <div class="sec">
+          <div class="label">
+            <div class="container-image">
+              <img src="../../assets/imgs/euro(4).png" alt="" />
+            </div>
+            <div>Prix</div>
+          </div>
+          <div class="value">1350 euros</div>
+        </div>
+
+        <!-- sec3 -->
+        <div class="for">
+          <div class="label">
+            <div class="container-image">
+              <img src="../../assets/imgs/verifier.png" alt="" />
+            </div>
+            <div>Idéal pour</div>
+          </div>
+          <div class="info-for">
+            <div class="info" *ngFor="let info of item['idealPour']">
+              <div class="container-image">
+                <img src="../../assets/imgs/points.png" alt="" />
+              </div>
+              <div>
+                {{ info }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sec4 -->
+        <div class="footer">
+          <div
+            class="container-button"
+            (click)="redirectToWhatsApp(item.titre)"
+            (touchstart)="redirectToWhatsApp(item.titre)"
+          >
+            <div class="container-image">
+              <img
+                src="../../assets/imgs/quelle-est-lapplication.png"
+                alt="whatsapp"
+              />
+            </div>
+            <div>Whatsapp</div>
+          </div>
+          <div
+            class="container-button"
+            (click)="redirectToMail(item.titre, item.duree)"
+          >
+            <div class="container-image">
+              <img src="../../assets/imgs/gmail(1).png" alt="whatsapp" />
+            </div>
+            <div>Mail</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

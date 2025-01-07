@@ -1,0 +1,178 @@
+.info-container {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 40px;
+  > ::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 5px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to right, #185fbd 0%, #013358 100%);
+    border-radius: 40px;
+    animation: globalBottomAnimation 1.5s ease-in-out both;
+  }
+
+  // title
+  .container-title {
+    text-align: center;
+    .title {
+      font-size: clamp(32px, 3vw, 45px);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(to right, #09203f 0%, #0e3c60 100%);
+      font-weight: 500;
+      position: relative;
+    }
+
+    ::before {
+      position: absolute;
+      content: "";
+      left: 0%;
+      width: 100%;
+      height: 6px;
+      border-radius: 20px;
+      background-image: linear-gradient(to left, #2b5876 0%, #4e4376 100%);
+      bottom: 0px;
+    }
+  }
+
+  .container-description {
+    min-width: 60vw;
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid rgba(244, 244, 244, 0.167);
+    border-radius: 18px;
+    box-shadow: 0 0 8px #0f0f0f87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 20px;
+    .description {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: clamp(20px, 3vw, 24px);
+      min-width: 100%;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-bottom: 2px solid black;
+      .container-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          height: 10vw;
+          width: 10vw;
+          max-height: 50px;
+          max-width: 50px;
+        }
+      }
+      .container-img-label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .description:last-child {
+      border-bottom: none;
+      padding-bottom: 0px;
+    }
+    .container-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      .value {
+        background-image: linear-gradient(to left, #02475a 0%, #02475a 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        justify-self: end;
+      }
+
+      .container-img:hover {
+        transition: all 0.5s ease;
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.toast {
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0.9;
+}
+// responsive
+@media screen and (max-width: 1400px) {
+  .container-description {
+    min-width: 80vw !important;
+  }
+  .description {
+    font-size: clamp(16px, 3vw, 20px) !important;
+    .container-img {
+      img {
+        height: 15vw !important;
+        width: 15vw !important;
+        max-height: 30px !important;
+        max-width: 30px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-description {
+    min-width: 90vw !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container-description {
+    min-width: 85% !important;
+    max-width: 85% !important;
+    margin-top: 15px !important;
+    padding: 15px !important;
+    gap: 10px !important;
+  }
+  .container-description {
+    min-width: 90vw !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container-description {
+    min-width: 85vw !important;
+  }
+  .description {
+    flex-direction: column;
+    gap: 5px !important;
+
+    .container-value {
+      justify-content: space-between !important;
+      min-width: 100%;
+      .value {
+        text-align: start !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<div class="container-globale">
+  <!-- Part-1 -->
+  <div class="logo-container">
+    <div class="logo-pic">
+      <img src="../../assets/imgs/logo.png" alt="log" />
+    </div>
+    <div class="logo-text">
+      <div>BrusselsPermis</div>
+    </div>
+  </div>
+
+  <!-- Part-2 -->
+  <div  class="menu-container">
+    <div   class="container-image" (click)="clickMenu()" role="button">
+      <img [src]="menuPic" alt="menu" />
+      <div class="container-chose-menu" *ngIf="!closeMenu">
+        <div class="chose" *ngFor="let item of choseElements; let i = index">
+          <div class="chose-pic" (click)="scrollToComponent(i)">
+            <img [src]="item['picture']" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-chose" *ngIf="closeMenu">
+      <div class="chose" *ngFor="let item of choseElements; let i = index" (click)="scrollToComponent(i)">
+        <div class="chose-pic">
+          <img [src]="item['picture']" alt="" />
+        </div>
+        <div class="chose-text">
+          <div>{{ item["name"] }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
