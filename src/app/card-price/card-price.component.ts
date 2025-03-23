@@ -52,7 +52,7 @@ export class CardPriceComponent {
     },
     {
       id: 6,
-      titre: 'Théorie',
+      titre: 'Pratique',
       duree: '2 Heures',
       prix: 140,
       idealPour: [

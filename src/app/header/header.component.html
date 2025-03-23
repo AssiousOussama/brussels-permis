@@ -1,6 +1,6 @@
 
 
-<div class="container-globale" (click)="clickMenu()">
+<div class="container-globale">
   <!-- Part-1 -->
   <div class="logo-container">
     <div class="logo-pic">
@@ -13,7 +13,7 @@
 
   <!-- Part-2 -->
   <div  class="menu-container">
-    <div class="container-image" (click)="clickMenu()" role="button" tabindex="0">
+    <div class="container-image" (click)="clickMenu()" >
       <img [src]="menuPic" alt="menu" />
       <div class="container-chose-menu" *ngIf="!closeMenu">
         <div class="chose" *ngFor="let item of choseElements; let i = index">

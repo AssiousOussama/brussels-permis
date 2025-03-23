@@ -30,7 +30,6 @@ export class HeaderComponent {
   public menuPic: string = 'assets/imgs/menu.png';
 
   public clickMenu() {
-    alert("dsdsqds")
     if (this.closeMenu) {
       this.menuPic = 'assets/imgs/croix.png';
     } else {
@@ -38,7 +37,7 @@ export class HeaderComponent {
     }
     this.closeMenu = !this.closeMenu;
   }
-
+  
   scrollToComponent(componentIndex: number) {
     const element = document.getElementById(
       'sec-' + this.choseElements[componentIndex].name
