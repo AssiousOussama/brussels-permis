@@ -9,7 +9,6 @@ import { SHARED_IMPORTS_BASE } from '../shared-imports';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  private numeroWatssap: string = '+212700437964';
   constructor() {}
   connect() {
     const phoneNumber = '+32465640683';
@@ -20,5 +19,12 @@ export class HomeComponent {
     )}`;
 
     window.open(urlWhatsApp, '_blank');
+  }
+
+  ngAfterViewInit() {
+    const button = document.getElementById('testButton');
+    button?.addEventListener('click', () => {
+      alert('Button clicked');
+    });
   }
 }
